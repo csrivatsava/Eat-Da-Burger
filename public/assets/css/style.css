@@ -1,0 +1,18 @@
+.red_font{
+    color : red;
+}
+html, .container-fluid{
+    background-color:greenyellow;
+    -webkit-overflow-scrolling: auto;
+}
+#submitBtn,
+.change-eaten{
+    font-weight: bold;
+    color: blue;
+    background-color: peachpuff;
+}
+
+li{
+    margin-left: 40px;
+    color:blue;
+}

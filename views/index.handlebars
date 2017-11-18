@@ -1,0 +1,59 @@
+<!-- Page Container -->
+<div class="container-fluid">
+    <br>
+    <!-- Burger Image -->
+    <center>
+        <div class="row">
+            <img src="/assets/img/veggie-whopper.png" alt="Veggie-Whopper">
+        </div>
+    </center>
+
+    <!-- Page Title -->
+    <center>
+        <h1 class="red_font">Eat da Burger!
+        </h1>
+    </center>
+
+    <br>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h2 class="text-center red_font">Burgers Ordered</h2>
+            <ul>
+                {{#each burgers}} {{#unless eaten}}
+                <li>
+                    {{id}}.{{name}}
+                    <button class="change-eaten btn-lg" data-id="{{this.id}}" data-neweaten="{{eaten}}">
+                        {{#if eaten}}Eat Again{{else}}Devour It!{{/if}}
+                    </button>
+                </li>
+                {{/unless}} {{/each}}
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            <h2 class="text-center red_font" >Burgers Eaten</h2>
+            <ul>
+                {{#each burgers}} {{#if eaten}}
+                <li>
+                    {{id}}.{{name}}
+                    <button class="change-eaten btn-lg" data-id="{{this.id}}" data-neweaten="{{eaten}}">
+                        {{#if eaten}}Eat Again{{else}}Devour It!{{/if}}
+                    </button>
+                </li>
+                {{/if}} {{/each}}
+            </ul>
+        </div>
+    </div>
+    
+    <form class="create-form text-center">
+        <br><br><br>
+        <div class="form-group">
+            {{!-- <label for="burger">Burger Name:</label> --}}
+            <textarea rows="4" cols="90" name="name" id="burger" form="create-form"></textarea>
+        </div>
+
+        <h3 class="text-center red_font">Our Signature Burgers are Yummy!</h3>
+        <button class="btn-lg" id="submitBtn" type="submit">Add Burger</button>
+    </form>
+    
+</div>
